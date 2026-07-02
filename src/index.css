@@ -1,6 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::selection {
+  background: #7B61FF;
+  color: #0A0A0F;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: #0A0A0F;
+}
+
+/* thin custom scrollbar to match the dark surface */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #23242E;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34364a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
